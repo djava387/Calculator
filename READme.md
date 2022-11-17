@@ -12,9 +12,9 @@ The buttons have value attribute to be passed into Javascript . The calculator h
         </div>
             <div class="button-container">
                 <button class = "operator"value="+">+</button>
-                <button value="-">-</button>
-                <button value="*">*</button>
-                <button value="/">/</button>
+                <button class = "operator" value="-">-</button>
+                <button class = "operator" value="*">*</button>
+                <button class = "operator" value="/">/</button>
                 <button value="7">7</button>
                 <button value="8">8</button>
                 <button value="9">9</button>
