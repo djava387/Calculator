@@ -8,7 +8,7 @@ The buttons have value attribute to be passed into Javascript . The calculator h
 <body>
     <div class="calculator">
         <div class = "dis-calc">
-            <h1>1234567890</h1>
+            <h1>0</h1>
         </div>
             <div class="button-container">
                 <button class = "operator"value="+">+</button>
