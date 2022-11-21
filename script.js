@@ -22,7 +22,7 @@ inputButtons.forEach((inputButton) => {
     }  else if (inputButton.classList.contains('operator')){
         inputButton.addEventListener('click', () =>inputNumberValue(inputButton.value));
     }  else if (inputButton.classList.contains('decimal')){
-        inputButton.addEventListener('click',() => inputNumberValue());
+        inputButton.addEventListener('click',() => inputNumberValue(inputButton.value));
     }
 
 });
