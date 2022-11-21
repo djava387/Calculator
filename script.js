@@ -11,7 +11,13 @@ function inputNumberValue (number) {
 const disValue = calcDis.textContent;
 calcDis.textContent = disValue === '0' ? number :  disValue + number;
 }
+function inputDecimal () {
+    // if there is no decimal, add one
+    if (!calcDis.textContent.includes('.')){
+        calcDis.textContent =   `${calcDis.textContent}.`;
+    }
 
+}
 // console.log(inputButton);
 //creating eventlistenners for all the buttons i.e numbers, decimal, operators
  //running a function for each item within array inputButtons
@@ -22,10 +28,18 @@ inputButtons.forEach((inputButton) => {
     }  else if (inputButton.classList.contains('operator')){
         inputButton.addEventListener('click', () =>inputNumberValue(inputButton.value));
     }  else if (inputButton.classList.contains('decimal')){
-        inputButton.addEventListener('click',() => inputNumberValue(inputButton.value));
+        inputButton.addEventListener('click',() => inputDecimal());
     }
 
 });
+
+// Clear display
+function clearAll () {
+    calcDis.textContent ='0'
+}
+
+//Evemt Listener
+clearButton.addEventListener('click', clearAll);
 
 
 
