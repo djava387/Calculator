@@ -28,3 +28,30 @@ Created a function that replaced the default value when 0 and also joined number
 const disValue = calcDis.textContent;
 calcDis.textContent = disValue === '0' ? number :  disValue + number;
 ```
+
+### Milestone 3 (sript.js - decimal and clear button functionality)
+
+Added reset functionality for clear button to reset display to 0 using a function. Added EvemtListener to call the function to reset.
+
+```
+/ Clear display
+function clearAll () {
+    calcDis.textContent ='0'
+}
+
+//Event Listener
+clearButton.addEventListener('click', clearAll);
+
+```
+
+Created a new function to prevent user from having multiple decimals, using if statement to add decimal only if there is none. In order to check if there is a specific value(decimal) in a string, .include() method is used. InputDecimal is a function that checks on the display if there is a decimal point. If there is no decimal, the textContext is set to add decimal at the end of it.
+
+```
+function inputDecimal () {
+    // if there is no decimal, add one
+    if (!calcDis.textContent.includes('.')){
+        calcDis.textContent =   `${calcDis.textContent}.`;
+    }
+
+}
+```
