@@ -31,19 +31,37 @@ const inputDecimal =() =>{
     }
 
 }
+//calculating first and second values based on the corresponding opeartor
+const calculate = {
+    '/': (firstNumber, secondNumber) => firstNumber / secondNumber,
+    '*': (firstNumber, secondNumber) => firstNumber * secondNumber,
+    '+': (firstNumber, secondNumber) => firstNumber + secondNumber,
+    '-': (firstNumber, secondNumber) => firstNumber - secondNumber,
+    '=': (firstNumber, secondNumber) => secondNumber,
+}
 const funcOperator=(operator)=> {
 const currentValue = Number(calcDis.textContent);
+//block multiple operators
+if(operatorValue && nextValue) {
+    operatorValue = operator;
+    return;
+}
+
 //the first value is assigned if there is no other value
 if(!firstInput) {
     firstInput = currentValue;
     // operatorValue = operator;
 } else{
-    console.log ('currentValue', currentValue);
+    // console.log (firstInput, operatorValue, currentValue);
+    const  calculation = calculate[operatorValue](firstInput, currentValue);
+    calcDis.textContent = calculation;
+    // console.log('calculation', calculation);
+    firstInput = calculation;
 }
 nextValue = true;
 operatorValue = operator;
-console.log( 'firstInput', firstInput);
-console.log ('opeartor', operatorValue);
+// console.log( 'firstInput', firstInput);
+// console.log ('opeartor', operatorValue);
 }
 // console.log(inputButton);
 //creating eventlistenners for all the buttons i.e numbers, decimal, operators
