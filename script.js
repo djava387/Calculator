@@ -4,14 +4,14 @@ const calcDis = document.querySelector("h1");
 const inputButtons = document.querySelectorAll ("button");
 const clearButton =  document.getElementById ("clear-btn");
 //console logging  parameters to be passed from evenlistenners
-function inputNumberValue (number) {
+ const inputNumberValue = (number) =>{
 // console.log(number);
 // calcDis.textContent = number;
 // add numbers together except when number is 0
 const disValue = calcDis.textContent;
 calcDis.textContent = disValue === '0' ? number :  disValue + number;
 }
-function inputDecimal () {
+const inputDecimal =() =>{
     // if there is no decimal, add one
     if (!calcDis.textContent.includes('.')){
         calcDis.textContent =   `${calcDis.textContent}.`;
@@ -34,11 +34,11 @@ inputButtons.forEach((inputButton) => {
 });
 
 // Clear display
-function clearAll () {
+const clearAll =()=> {
     calcDis.textContent ='0'
 }
 
-//Evemt Listener
+//Event Listener
 clearButton.addEventListener('click', clearAll);
 
 
