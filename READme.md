@@ -3,6 +3,7 @@
 Completed the first phase with index.html. Created overal claculator element with parent and child class. Created different buttons i.e at the top, 10 numbers, four operators, decimal point,clear button and equal sign
 
 The buttons have value attribute to be passed into Javascript . The calculator has 5 rows and 1 column - the first row is for the operators, the 3 rows will be for numbers. The column will take full length vertically at far right-end for the equal sign.
+NB: More operators to be added
 
 ### Milestone 2 (script.js)
 
@@ -55,3 +56,8 @@ function inputDecimal () {
 
 }
 ```
+
+###Milestone 3 (Calculation Logic)
+created 3 global variables to be used in some functions and replaced operator function with real operator function.Converted the string value from display into an actual number using number method and updated clear function to change input value when user clicks clear button and starts over. prevented multple operators from being input.
+
+Created object(calculate) with 5 values, each value has a key i.e an operator.The first and second number is passed in to be run through a function with the corresponding operator
