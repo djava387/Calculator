@@ -3,20 +3,47 @@ const calcDis = document.querySelector("h1");
 // targetting  all button elements i.e returns array of all the buttons 
 const inputButtons = document.querySelectorAll ("button");
 const clearButton =  document.getElementById ("clear-btn");
+
+let firstInput =0;
+let operatorValue ='';
+let nextValue = false;
+
 //console logging  parameters to be passed from evenlistenners
  const inputNumberValue = (number) =>{
 // console.log(number);
 // calcDis.textContent = number;
 // add numbers together except when number is 0
-const disValue = calcDis.textContent;
-calcDis.textContent = disValue === '0' ? number :  disValue + number;
+if(nextValue ===true) {
+    calcDis.textContent = number;
+    nextValue = false;
+} else{
+    const disValue = calcDis.textContent;
+    calcDis.textContent = disValue === '0' ? number :  disValue + number;
+}
+
 }
 const inputDecimal =() =>{
+    // if user has clicked the operator, block decimal
+    if (nextValue ===true) return;
     // if there is no decimal, add one
     if (!calcDis.textContent.includes('.')){
         calcDis.textContent =   `${calcDis.textContent}.`;
     }
 
+}
+const funcOperator=(operator)=> {
+const currentValue = Number(calcDis.textContent);
+//the first value is assigned if there is no other value
+if(!firstInput) {
+    firstInput = currentValue;
+    // operatorValue = operator;
+} else{
+    console.log ('currentValue', currentValue);
+}
+nextValue = true;
+operatorValue = operator;
+console.log( 'firstInput', firstInput);
+console.log ('opeartor', operatorValue);
 }
 // console.log(inputButton);
 //creating eventlistenners for all the buttons i.e numbers, decimal, operators
@@ -26,7 +53,7 @@ inputButtons.forEach((inputButton) => {
     if(inputButton.classList.length ===0) {
         inputButton.addEventListener('click', () =>inputNumberValue(inputButton.value));
     }  else if (inputButton.classList.contains('operator')){
-        inputButton.addEventListener('click', () =>inputNumberValue(inputButton.value));
+        inputButton.addEventListener('click', () =>funcOperator(inputButton.value));
     }  else if (inputButton.classList.contains('decimal')){
         inputButton.addEventListener('click',() => inputDecimal());
     }
@@ -35,7 +62,10 @@ inputButtons.forEach((inputButton) => {
 
 // Clear display
 const clearAll =()=> {
-    calcDis.textContent ='0'
+    firstInput =0;
+    operatorValue ='';
+    nextValue = false;
+    calcDis.textContent ='0';
 }
 
 //Event Listener
