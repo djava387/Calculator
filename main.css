@@ -8,18 +8,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #16222a, #3a6073);
+  background: linear-gradient(to right, #000000, #434343);
 }
 
 .calculator {
-  background: white;
+  background: black;
   width: 800px;
   border-radius: 12px;
   box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
 }
 
 .dis-calc {
-  background: rgb(31, 28, 28);
+  background: black;
   color: white;
   margin: 0;
   display: flex;
@@ -46,15 +46,16 @@ h1 {
 
 button {
   min-height: 50px;
+  color: white;
   font-size: 20px;
   font-weight: 100;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: rgb(231, 109, 139);
+  background: rgb(39, 38, 38);
 }
 button:hover {
-  filter: brightness(350%);
+  filter: brightness(180%);
 }
 button:active {
   transform: translateY(3px);
@@ -70,8 +71,8 @@ button:focus {
 
 .equal {
   grid-column: -2;
-  grid-row: 2/span 4;
-  background: rgb(216, 38, 76);
+  grid-row: 2/span 5;
+  background: rgb(230, 148, 25);
 }
 
 .clear {
